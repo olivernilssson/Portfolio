@@ -6,7 +6,7 @@ function NavLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+      className="transition hover:text-orange-500 dark:hover:text-orange-400"
     >
       {children}
     </Link>
@@ -27,8 +27,7 @@ export function Footer() {
                 <NavLink href="/uses">Uses</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Spencer Sharp. All rights
-                reserved.
+                {new Date().getFullYear()} Oliver Nilsson. Made with Next.js.
               </p>
             </div>
           </ContainerInner>
