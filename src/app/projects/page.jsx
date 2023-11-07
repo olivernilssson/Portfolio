@@ -69,7 +69,7 @@ export default async function Projects() {
   return (
     <SimpleLayout
       title="Fintech projects I've worked on."
-      intro="Welcome to my fintech projects page! Here you'll find some of the projects I've worked on in my spare-time. From trading algorithms to Business Intelligence, these are the projects I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      intro="Welcome to my fintech projects page! Here you'll find some of the projects I've worked on in my spare-time. From trading algorithms to Business Intelligence, these are the projects I'm most proud of. The logos represent the tech stack used in each project."
     >
       <ul
         role="list"
