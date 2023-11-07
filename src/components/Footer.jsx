@@ -24,7 +24,7 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/speaking">Speaking</NavLink>
-                <NavLink href="/uses">Uses</NavLink>
+                <NavLink href="/tech">Tech</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 {new Date().getFullYear()} Oliver Nilsson. Made with Next.js.
