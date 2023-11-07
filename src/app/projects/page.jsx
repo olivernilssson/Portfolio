@@ -77,14 +77,15 @@ export default async function Projects() {
       >
         {projects.map((project) => (
           <Card as="li" key={project.slug}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <div className="flex">
             {project.logos.map((logo, index) => (
-              <Image
-                key={index}
-                src={logo}
-                alt=""
-                className="h-8 w-8"
-              />
+              <div key={index} className="relative z-10 flex h-12 w-12 mr-2 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image
+                  src={logo}
+                  alt=""
+                  className="h-8 w-8"
+                />
+              </div>
             ))}
             </div>
             <h3 className="mt-3 text-base text-zinc-800 dark:text-zinc-100">
