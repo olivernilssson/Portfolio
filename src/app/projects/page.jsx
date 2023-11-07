@@ -95,7 +95,7 @@ export default async function Projects() {
               </Card.Eyebrow>
             </h3>
             <h2 className="mt-0 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.slug}>{project.title}</Card.Link>
+              <Card.Link href={`/projects/${project.slug}`}>{project.title}</Card.Link>  
             </h2>
             <Card.Description>{project.description}</Card.Description>
             <div>
