@@ -38,26 +38,26 @@ export default function Tech() {
         <ToolsSection title="Programming Languages">
           <Tool title="Python">
             My go-to language for most things.
-            I’ve used it for everything from building web apps to data analysis to scripting.
+            I&apos;ve used it for everything from building web apps to data analysis to scripting.
           </Tool>
           <Tool title="SQL">
-            I’ve used a lot of different flavors of SQL over the years but I
+            I&apos;ve used a lot of different flavors of SQL over the years but I
             still prefer the simplicity of Postgres.
           </Tool>
           <Tool title="Excel VBA">
             VBA automates and effectivies my work in Excel.
           </Tool>
           <Tool title="React.js and Next.js">
-            I've been using React.js and Next.js for this website and I really
+            I&apos;ve been using React.js and Next.js for this website and I really
             like it.
           </Tool>
           <Tool title="Matlab">
-            I've been using Matlab for projects in school and I really like it.
+            I&apos;ve been using Matlab for projects in school and I really like it.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Data Visualization">
           <Tool title="Tableau">
-            I’ve been using Tableau for years and it’s still my favorite tool
+            I&apos;ve been using Tableau for years and it&apos;s still my favorite tool
             for quickly exploring data and building dashboards.
           </Tool>
           <Tool title="Power BI">
@@ -66,13 +66,13 @@ export default function Tech() {
         </ToolsSection>
         <ToolsSection title="Productivity">
           <Tool title="Alfred">
-            It’s not the newest kid on the block but it’s still the fastest. The
+            It&apos;s not the newest kid on the block but it&apos;s still the fastest. The
             Sublime Text of the application launcher world.
           </Tool>
           <Tool title="Reflect">
             Using a daily notes system instead of trying to keep things
             organized by topics has been super powerful for me. And with
-            Reflect, it’s still easy for me to keep all of that stuff
+            Reflect, it&apos;s still easy for me to keep all of that stuff
             discoverable by topic even though all of my writing happens in the
             daily note.
           </Tool>
