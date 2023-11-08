@@ -7,6 +7,9 @@ import pythonLogo from '@/images/logos/python.svg'
 import logoTableau from '@/images/logos/tableau.svg'
 import logoExcel from '@/images/logos/excel.svg'
 import logoPostgreSQL from '@/images/logos/postgresql.svg'
+import logoMATLAB from '@/images/logos/matlab.svg'
+import logoReact from '@/images/logos/react.svg'
+import logoPowerBI from '@/images/logos/powerbi.svg'
 
 function ToolsSection({ children, ...props }) {
   return (
@@ -62,12 +65,12 @@ export default function Tech() {
           <Tool title="Excel VBA" logo={logoExcel}>
             VBA automates and effectivies my work in Excel.
           </Tool>
-          <Tool title="React.js and Next.js">
+          <Tool title="React.js and Next.js" logo={logoReact}>
             I&apos;ve been using React.js and Next.js for this website and I really
             like it.
           </Tool>
-          <Tool title="Matlab">
-            I&apos;ve been using Matlab for projects in school and I really like it.
+          <Tool title="MATLAB" logo={logoMATLAB}>
+            I&apos;ve been using MATLAB for some projects in school.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Data Visualization">
@@ -75,7 +78,7 @@ export default function Tech() {
             I&apos;ve been using Tableau for years and it&apos;s still my favorite tool
             for quickly exploring data and building dashboards.
           </Tool>
-          <Tool title="Power BI">
+          <Tool title="Power BI" logo={logoPowerBI}>
             Power BI is a great tool for building dashboards and reports.
           </Tool>
         </ToolsSection>

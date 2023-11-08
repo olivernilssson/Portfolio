@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 
+import { ChevronRightIcon } from '@/components/Card'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
@@ -98,7 +99,7 @@ function Project({ project }) {
 function SocialLink({ icon: Icon, ...props }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-orange-500 dark:fill-zinc-400 dark:group-hover:fill-orange-500" />
     </Link>
   )
 }
@@ -144,17 +145,23 @@ async function LatestProjects() {
   let projects = (await getAllProjects()).slice(0, 4)
   
   return (
-  <div className="flex flex-col gap-16">
-    <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-      Latest projects.
-    </h1>
+    <div className="flex flex-col gap-16">
+      <div>
+        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          Latest projects.
+        </h1>
+        <Link href="/projects" className="relative z-10 mt-4 flex items-center text-sm font-medium text-orange-500">
+          View all projects
+          <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
+        </Link>
+      </div>
     {projects.map((project) => (
       <Project key={project.slug} project={project} />
     ))}
   </div>
   )
 }
-  
+
 
 function Resume() {
   let resume = [
@@ -269,11 +276,11 @@ export default async function Home() {
           </div>
         </div>
       </Container>
-      <Photos />  
+      <Photos />
       <Container className="mt-24 md:mt-28">
-        <div className="space-y-10 mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <LatestProjects />
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
+          <div className="mt-0 lg:pl-16 xl:pl-24">
             <Resume />
           </div>
         </div>
