@@ -273,8 +273,8 @@ export default async function Home() {
               aria-label="Follow on Instagram"
               icon={MailIcon}
             />
+            </div>
           </div>
-        </div>
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">

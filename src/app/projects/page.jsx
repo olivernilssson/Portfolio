@@ -17,13 +17,15 @@ import { formatDate } from '@/lib/formatDate'
 //   )
 // }
 
-export const metadata = {
-  title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
-}
 
 export default async function Projects() {
   let projects = await getAllProjects()
+
+  const metadata = {
+    title: 'Projects',
+    description: 'Things I’ve made trying to put my dent in the universe.',
+  }
+  
   return (
     <SimpleLayout
       title="Fintech projects I've worked on."
