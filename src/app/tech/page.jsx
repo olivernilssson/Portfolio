@@ -1,6 +1,12 @@
+import Image from 'next/image'
+
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import pythonLogo from '@/images/logos/python.svg'
+import logoTableau from '@/images/logos/tableau.svg'
+import logoExcel from '@/images/logos/excel.svg'
+import logoPostgreSQL from '@/images/logos/postgresql.svg'
 
 function ToolsSection({ children, ...props }) {
   return (
@@ -12,12 +18,21 @@ function ToolsSection({ children, ...props }) {
   )
 }
 
-function Tool({ title, href, children }) {
+function Tool({ title, href, logo, children }) {
   return (
     <Card as="li">
-      <Card.Title as="h3" href={href}>
-        {title}
-      </Card.Title>
+      <div className="flex items-center">
+          <div className="relative z-10 flex h-12 w-12 mr-2 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <Image
+            src={logo}
+            alt=""
+            className="h-8 w-8"
+          />
+          </div>
+        <Card.Title as="h3" href={href}>
+          {title}
+        </Card.Title>
+      </div>
       <Card.Description>{children}</Card.Description>
     </Card>
   )
@@ -36,15 +51,15 @@ export default function Tech() {
     >
       <div className="space-y-20">
         <ToolsSection title="Programming Languages">
-          <Tool title="Python">
+          <Tool title="Python" logo={pythonLogo}>
             My go-to language for most things.
-            I&apos;ve used it for everything from building web apps to data analysis to scripting.
+              I&apos;ve used it for everything from building web apps to data analysis to scripting.
           </Tool>
-          <Tool title="SQL">
+          <Tool title="SQL" logo={logoPostgreSQL}>
             I&apos;ve used a lot of different flavors of SQL over the years but I
             still prefer the simplicity of Postgres.
           </Tool>
-          <Tool title="Excel VBA">
+          <Tool title="Excel VBA" logo={logoExcel}>
             VBA automates and effectivies my work in Excel.
           </Tool>
           <Tool title="React.js and Next.js">
@@ -56,33 +71,12 @@ export default function Tech() {
           </Tool>
         </ToolsSection>
         <ToolsSection title="Data Visualization">
-          <Tool title="Tableau">
+          <Tool title="Tableau" logo={logoTableau}>
             I&apos;ve been using Tableau for years and it&apos;s still my favorite tool
             for quickly exploring data and building dashboards.
           </Tool>
           <Tool title="Power BI">
             Power BI is a great tool for building dashboards and reports.
-          </Tool>
-        </ToolsSection>
-        <ToolsSection title="Productivity">
-          <Tool title="Alfred">
-            It&apos;s not the newest kid on the block but it&apos;s still the fastest. The
-            Sublime Text of the application launcher world.
-          </Tool>
-          <Tool title="Reflect">
-            Using a daily notes system instead of trying to keep things
-            organized by topics has been super powerful for me. And with
-            Reflect, it&apos;s still easy for me to keep all of that stuff
-            discoverable by topic even though all of my writing happens in the
-            daily note.
-          </Tool>
-          <Tool title="SavvyCal">
-            Great tool for scheduling meetings while protecting my calendar and
-            making sure I still have lots of time for deep work during the week.
-          </Tool>
-          <Tool title="Focus">
-            Simple tool for blocking distracting websites when I need to just do
-            the work and get some momentum going.
           </Tool>
         </ToolsSection>
       </div>

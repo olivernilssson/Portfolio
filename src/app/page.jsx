@@ -7,9 +7,7 @@ import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
-  TwitterIcon,
 } from '@/components/SocialIcons'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
@@ -20,7 +18,7 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import { getAllArticles } from '@/lib/articles'
+import { getAllProjects } from '@/lib/projects'
 import { formatDate } from '@/lib/formatDate'
 
 function MailIcon(props) {
@@ -82,17 +80,17 @@ function ArrowDownIcon(props) {
   )
 }
 
-function Article({ article }) {
+function Project({ project }) {
   return (
-    <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
+    <Card as="project">
+      <Card.Title href={`/projects/${project.slug}`}>
+        {project.title}
       </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
+      <Card.Eyebrow as="time" dateTime={project.date} decorate>
+        {formatDate(project.date)}
       </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
+      <Card.Description>{project.description}</Card.Description>
+      <Card.Cta>View project</Card.Cta>
     </Card>
   )
 }
@@ -141,6 +139,22 @@ function Role({ role }) {
     </li>
   )
 }
+
+async function LatestProjects() {
+  let projects = (await getAllProjects()).slice(0, 4)
+  
+  return (
+  <div className="flex flex-col gap-16">
+    <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+      Latest projects.
+    </h1>
+    {projects.map((project) => (
+      <Project key={project.slug} project={project} />
+    ))}
+  </div>
+  )
+}
+  
 
 function Resume() {
   let resume = [
@@ -224,7 +238,7 @@ function Photos() {
 }
 
 export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 4)
+  let projects = (await getAllProjects()).slice(0, 4)
 
   return (
     <>
@@ -257,12 +271,8 @@ export default async function Home() {
       </Container>
       <Photos />  
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
-          </div>
+        <div className="space-y-10 mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+          <LatestProjects />
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Resume />
           </div>
