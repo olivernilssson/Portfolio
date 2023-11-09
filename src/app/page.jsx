@@ -21,7 +21,6 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import { getAllProjects } from '@/lib/projects'
 import { formatDate } from '@/lib/formatDate'
-import { VisitTracker } from '@/components/VisitTracker'
 
 
 export function MailIcon(props) {
@@ -286,7 +285,6 @@ export default async function Home() {
           </div>
         </div>
       </Container>
-      <VisitTracker />
     </>
   )
 }

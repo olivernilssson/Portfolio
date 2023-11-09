@@ -6,7 +6,6 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import { countTotalVisits } from '@/lib/queries'
 
 function NavLink({ href, children }) {
   return (
@@ -51,7 +50,7 @@ export async function Footer() {
               </div>
               <div className="flex items-center justify-center gap-6 mt-6 sm:mt-0">
                 <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                  {counter} visits
+                  visits
                 </p>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
