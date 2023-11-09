@@ -19,7 +19,6 @@ function NavLink({ href, children }) {
 }
 
 export async function Footer() {
-  const counter = await countTotalVisits()
   return (
     <footer className="mt-32 flex-none">
       <ContainerOuter>
