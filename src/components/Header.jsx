@@ -15,18 +15,35 @@ import {
   LinkedInIcon,
 } from '@/components/SocialIcons'
 
-function SocialLink({ icon: Icon, href, ...props }) {
-  // Check if window is defined to ensure we're in the browser
-  if (typeof window !== 'undefined') {
-    return (
-      <a href={href} className="group" {...props}>
-        <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-orange-500 dark:fill-zinc-400 dark:group-hover:fill-orange-500" />
-      </a>
-    )
-  } else {
-    // Return a placeholder for server-side rendering
-    return <div></div>
-  }
+function MailIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
+        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+      />
+      <path
+        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
+        className="stroke-zinc-400 dark:stroke-zinc-500"
+      />
+    </svg>
+  )
+}
+
+function SocialLink({ icon: Icon, ...props }) {
+  return (
+    <Link className="group" target="_blank" rel="noopener noreferrer" {...props}>
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-orange-500 dark:fill-zinc-400 dark:group-hover:fill-orange-500" />
+    </Link>
+  )
 }
 
 function CloseIcon(props) {
@@ -185,22 +202,32 @@ function DesktopNavigation(props) {
         <NavItem href="/about">About</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/tech">Tech</NavItem>
-        <NavItem href={""}>
-          <SocialLink
-            href={"https://github.com/aaa"}
-            aria-label="Follow on GitHub"
-            icon={GitHubIcon}
-          />
-        </NavItem>
-        <NavItem href={""}>
-        <SocialLink
-            href="https://linkedin.com/in/oliver-nilsson-b994641aa"
-            aria-label="Follow on LinkedIn"
-            icon={LinkedInIcon}
-          />
-        </NavItem>
       </ul>
     </nav>
+  )
+}
+
+function SocialBar() {
+  return (
+    <div
+    className="flex mr-6 gap-6 rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+  >
+    <SocialLink 
+    href="https://github.com"
+    aria-label="Follow on GitHub"
+    icon={GitHubIcon}
+    />
+    <SocialLink
+    href="https://linkedin.com/in/oliver-nilsson-b994641aa"
+    aria-label="Follow on LinkedIn"
+    icon={LinkedInIcon}
+    />
+    <SocialLink
+    href="mailto:olivernilsson@live.se"
+    aria-label="Send email"
+    icon={MailIcon}
+    />
+  </div>
   )
 }
 
@@ -222,7 +249,7 @@ function ThemeToggle() {
     >
       <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-orange-50 [@media(prefers-color-scheme:dark)]:stroke-orange-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-orange-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-600" />
       <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-orange-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-orange-500" />
-    </button>
+      </button>
   )
 }
 
@@ -444,6 +471,9 @@ export function Header() {
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
               <div className="flex justify-end md:flex-1">
+                <div className="pointer-events-auto">
+                  <SocialBar />
+                </div>
                 <div className="pointer-events-auto">
                   <ThemeToggle />
                 </div>

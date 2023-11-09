@@ -98,7 +98,7 @@ function Project({ project }) {
 
 export function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <Link className="group" target="_blank" rel="noopener noreferrer" {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-orange-500 dark:fill-zinc-400 dark:group-hover:fill-orange-500" />
     </Link>
   )
@@ -270,7 +270,7 @@ export default async function Home() {
             />
             <SocialLink
               href="mailto:olivernilsson@live.se"
-              aria-label="Follow on Instagram"
+              aria-label="Send email"
               icon={MailIcon}
             />
             </div>

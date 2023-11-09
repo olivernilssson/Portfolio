@@ -42,7 +42,7 @@ export function Footer() {
                 />
                 <SocialLink
                   href="mailto:olivernilsson@live.se"
-                  aria-label="Follow on Instagram"
+                  aria-label="Send email"
                   icon={MailIcon}
                 />
                 </div>
