@@ -50,7 +50,7 @@ export default function Tech() {
   return (
     <SimpleLayout
       title="Technology I use."
-      intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
+      intro="This is the technology I mainly use to build Business Intelligence solutions, analyze data, stay productive etc. I am always open for learning new things and trying to improve my skills."
     >
       <div className="space-y-20">
         <ToolsSection title="Programming Languages">

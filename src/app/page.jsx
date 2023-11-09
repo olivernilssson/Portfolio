@@ -22,7 +22,7 @@ import image5 from '@/images/photos/image-5.jpg'
 import { getAllProjects } from '@/lib/projects'
 import { formatDate } from '@/lib/formatDate'
 
-function MailIcon(props) {
+export function MailIcon(props) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -96,7 +96,7 @@ function Project({ project }) {
   )
 }
 
-function SocialLink({ icon: Icon, ...props }) {
+export function SocialLink({ icon: Icon, ...props }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-orange-500 dark:fill-zinc-400 dark:group-hover:fill-orange-500" />

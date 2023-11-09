@@ -10,6 +10,24 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpeg'
+import {
+  GitHubIcon,
+  LinkedInIcon,
+} from '@/components/SocialIcons'
+
+function SocialLink({ icon: Icon, href, ...props }) {
+  // Check if window is defined to ensure we're in the browser
+  if (typeof window !== 'undefined') {
+    return (
+      <a href={href} className="group" {...props}>
+        <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-orange-500 dark:fill-zinc-400 dark:group-hover:fill-orange-500" />
+      </a>
+    )
+  } else {
+    // Return a placeholder for server-side rendering
+    return <div></div>
+  }
+}
 
 function CloseIcon(props) {
   return (
@@ -167,6 +185,20 @@ function DesktopNavigation(props) {
         <NavItem href="/about">About</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/tech">Tech</NavItem>
+        <NavItem href={""}>
+          <SocialLink
+            href={"https://github.com/aaa"}
+            aria-label="Follow on GitHub"
+            icon={GitHubIcon}
+          />
+        </NavItem>
+        <NavItem href={""}>
+        <SocialLink
+            href="https://linkedin.com/in/oliver-nilsson-b994641aa"
+            aria-label="Follow on LinkedIn"
+            icon={LinkedInIcon}
+          />
+        </NavItem>
       </ul>
     </nav>
   )

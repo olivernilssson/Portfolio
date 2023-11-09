@@ -1,6 +1,11 @@
 import Link from 'next/link'
 
 import { ContainerInner, ContainerOuter } from '@/components/Container'
+import { SocialLink, MailIcon } from 'src/app/page.jsx'
+import {
+  GitHubIcon,
+  LinkedInIcon,
+} from '@/components/SocialIcons'
 
 function NavLink({ href, children }) {
   return (
@@ -24,6 +29,23 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/tech">Tech</NavLink>
+              <div className="flex gap-6">
+                <SocialLink
+                  href="https://github.com"
+                  aria-label="Follow on GitHub"
+                  icon={GitHubIcon}
+                />
+                <SocialLink
+                  href="https://linkedin.com/in/oliver-nilsson-b994641aa"
+                  aria-label="Follow on LinkedIn"
+                  icon={LinkedInIcon}
+                />
+                <SocialLink
+                  href="mailto:olivernilsson@live.se"
+                  aria-label="Follow on Instagram"
+                  icon={MailIcon}
+                />
+                </div>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 {new Date().getFullYear()} Oliver Nilsson. Made with Next.js.
