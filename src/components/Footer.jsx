@@ -6,6 +6,7 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
+import { countTotalVisits } from '@/lib/queries'
 
 function NavLink({ href, children }) {
   return (
@@ -18,7 +19,8 @@ function NavLink({ href, children }) {
   )
 }
 
-export function Footer() {
+export async function Footer() {
+  const counter = await countTotalVisits()
   return (
     <footer className="mt-32 flex-none">
       <ContainerOuter>
@@ -31,7 +33,7 @@ export function Footer() {
                 <NavLink href="/tech">Tech</NavLink>
               <div className="flex gap-6">
                 <SocialLink
-                  href="https://github.com"
+                  href="https://github.com/olivernilssson"
                   aria-label="Follow on GitHub"
                   icon={GitHubIcon}
                 />
@@ -46,6 +48,11 @@ export function Footer() {
                   icon={MailIcon}
                 />
                 </div>
+              </div>
+              <div className="flex items-center justify-center gap-6 mt-6 sm:mt-0">
+                <p className="text-sm text-zinc-400 dark:text-zinc-500">
+                  {counter} visits
+                </p>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 {new Date().getFullYear()} Oliver Nilsson. Made with Next.js.

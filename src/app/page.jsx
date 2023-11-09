@@ -21,6 +21,8 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import { getAllProjects } from '@/lib/projects'
 import { formatDate } from '@/lib/formatDate'
+import { VisitTracker } from '@/components/VisitTracker'
+
 
 export function MailIcon(props) {
   return (
@@ -246,7 +248,6 @@ function Photos() {
 
 export default async function Home() {
   let projects = (await getAllProjects()).slice(0, 4)
-
   return (
     <>
       <Container className="mt-9">
@@ -259,7 +260,7 @@ export default async function Home() {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://github.com"
+              href="https://github.com/olivernilssson"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
@@ -273,8 +274,8 @@ export default async function Home() {
               aria-label="Send email"
               icon={MailIcon}
             />
-            </div>
           </div>
+        </div>
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
@@ -285,6 +286,7 @@ export default async function Home() {
           </div>
         </div>
       </Container>
+      <VisitTracker />
     </>
   )
 }
