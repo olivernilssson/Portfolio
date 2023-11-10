@@ -249,6 +249,7 @@ function Photos() {
 
 export default async function Home() {
   let projects = (await getAllProjects()).slice(0, 4)
+  const counter = await countTotalVisits()
   return (
     <>
       <Container className="mt-9">
@@ -257,7 +258,7 @@ export default async function Home() {
             Bridging Finance and Technology.
           </h1>
           <p className="text-sm text-zinc-400 dark:text-zinc-500">
-            visits
+            {counter} visits
                 </p>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I’m Oliver, currently studying Master of Science in Finance at the Business School of Gothenburg University. I have a passion for finance and technology and I am looking for a position where I can combine these two interests.
@@ -290,6 +291,7 @@ export default async function Home() {
           </div>
         </div>
       </Container>
+
     </>
   )
 }
