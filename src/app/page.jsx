@@ -285,7 +285,6 @@ export default async function Home() {
             />
           </div>
           </div>
-          <VisitTracker />
         </div>
       </Container>
       <Photos />
