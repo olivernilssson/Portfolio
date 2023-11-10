@@ -144,8 +144,8 @@ function Role({ role }) {
   )
 }
 
-async function LatestProjects() {
-  let projects = (await getAllProjects()).slice(0, 4)
+async function LatestProjects({ projects }) {
+  let project = projects.slice(0, 4)
   return (
     <div className="flex flex-col gap-16">
       <div>
@@ -157,15 +157,15 @@ async function LatestProjects() {
           <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
         </Link>
       </div>
-    {projects.map((project) => (
+    {project.map((project) => (
       <Project key={project.slug} project={project} />
     ))}
   </div>
   )
 }
 
-async function DisplayVisits() {
-  let counter = await countTotalVisits()
+async function DisplayVisits( {counter}) {
+
   return (
     <p className="text-sm text-zinc-400 dark:text-zinc-500">
       <VisitTracker />
@@ -256,6 +256,9 @@ function Photos() {
 }
 
 export default async function Home() {
+
+  let [projects, counter] = await Promise.all([getAllProjects(), countTotalVisits()])
+
   return (
     <>
       <Container className="mt-9">
@@ -285,13 +288,13 @@ export default async function Home() {
             />
           </div>
           </div>
-          <DisplayVisits />
+          <DisplayVisits counter={counter} />
         </div>
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <LatestProjects />
+          <LatestProjects projects={projects} />
           <div className="mt-0 lg:pl-16 xl:pl-24">
             <Resume />
           </div>
