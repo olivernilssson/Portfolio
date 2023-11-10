@@ -1,4 +1,3 @@
-import { async } from 'fast-glob'
 import { config } from './config'
 import { connect } from '@planetscale/database'
 

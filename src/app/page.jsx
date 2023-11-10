@@ -146,7 +146,6 @@ function Role({ role }) {
 
 async function LatestProjects() {
   let projects = (await getAllProjects()).slice(0, 4)
-  
   return (
     <div className="flex flex-col gap-16">
       <div>
@@ -165,6 +164,14 @@ async function LatestProjects() {
   )
 }
 
+async function DisplayVisits() {
+  const counter = await countTotalVisits()
+  return (
+    <p className="text-sm text-zinc-400 dark:text-zinc-500">
+    {counter} visits
+    </p>
+  )
+}
 
 function Resume() {
   let resume = [
@@ -248,17 +255,14 @@ function Photos() {
 }
 
 export default async function Home() {
-  const counter = await countTotalVisits()
   return (
     <>
       <Container className="mt-9">
+        <div className="flex">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Bridging Finance and Technology.
           </h1>
-          <p className="text-sm text-zinc-400 dark:text-zinc-500">
-            {counter} visits
-                </p>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I’m Oliver, currently studying Master of Science in Finance at the Business School of Gothenburg University. I have a passion for finance and technology and I am looking for a position where I can combine these two interests.
           </p>
@@ -279,6 +283,8 @@ export default async function Home() {
               icon={MailIcon}
             />
           </div>
+          </div>
+          <DisplayVisits />
         </div>
       </Container>
       <Photos />
