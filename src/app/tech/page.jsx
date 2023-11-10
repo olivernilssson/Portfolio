@@ -10,11 +10,12 @@ import logoPostgreSQL from '@/images/logos/postgresql.svg'
 import logoMATLAB from '@/images/logos/matlab.svg'
 import logoReact from '@/images/logos/react.svg'
 import logoPowerBI from '@/images/logos/powerbi.svg'
+import logoSQL from '@/images/logos/sql.svg'
 
 function ToolsSection({ children, ...props }) {
   return (
     <Section {...props}>
-      <ul role="list" className="space-y-16">
+      <ul role="list" className="space-y-10">
         {children}
       </ul>
     </Section>
@@ -52,22 +53,20 @@ export default function Tech() {
       title="Technology I use."
       intro="This is the technology I mainly use to build Business Intelligence solutions, analyze data, stay productive etc. I am always open for learning new things and trying to improve my skills."
     >
-      <div className="space-y-20">
+      <div className="space-y-10">
         <ToolsSection title="Programming Languages">
           <Tool title="Python" logo={pythonLogo}>
             My go-to language for most things.
-              I&apos;ve used it for everything from building web apps to data analysis to scripting.
+              I&apos;ve used it for everything from data analysis, modeling, and visualization to web development.
           </Tool>
-          <Tool title="SQL" logo={logoPostgreSQL}>
-            I&apos;ve used a lot of different flavors of SQL over the years but I
-            still prefer the simplicity of Postgres.
+          <Tool title="SQL" logo={logoSQL}>
+            I&apos;ve used different flavors of SQL over the years such as PostgreSQL, MySQL, and Microsoft SQL Server.
           </Tool>
           <Tool title="Excel VBA" logo={logoExcel}>
             VBA automates and effectivies my work in Excel.
           </Tool>
           <Tool title="React.js and Next.js" logo={logoReact}>
-            I&apos;ve been using React.js and Next.js for this website and I really
-            like it.
+            I&apos;ve been using React.js and Next.js to develop this webapp.
           </Tool>
           <Tool title="MATLAB" logo={logoMATLAB}>
             I&apos;ve been using MATLAB for some projects in school.

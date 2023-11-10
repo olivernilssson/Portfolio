@@ -13,7 +13,6 @@ import {
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoSons from '@/images/logos/sons.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -191,7 +190,7 @@ function Resume() {
     {
       company: 'Starbucks',
       title: 'Shift Supervisor',
-      logo: logoStarbucks,
+      logo: logoAirbnb,
       start: '2008',
       end: '2011',
     },

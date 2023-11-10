@@ -16,11 +16,11 @@ async function DisplayVisits( { counter, counter_previous, difference } ) {
                 clipRule="evenodd" />
         </svg>
         </div>
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-end justify-left gap-2">
-                        <dd className="mt-1 text-3xl leading-9 font-semibold text-orange-500">{counter}</dd>
-                            <dd className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">from {counter_previous}</dd>
-                        </div>
+          <div className="flex items-center justify-between">
+              <div className="flex items-baseline justify-left gap-2">
+              <dd className="mt-1 text-3xl leading-9 font-semibold text-orange-500">{counter}</dd>
+                  <dd className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">from {counter_previous}</dd>
+              </div>
             <span className={difference < 0 ? "text-red-500 text-sm font-semibold ml-2" : "text-green-500 text-sm font-semibold ml-2"}>
                 {difference > 0 ? `+${difference}` : difference}%
             </span>
