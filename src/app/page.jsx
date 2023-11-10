@@ -162,8 +162,6 @@ async function LatestProjects() {
   )
 }
 
-
-
 function Resume() {
   let resume = [
     {

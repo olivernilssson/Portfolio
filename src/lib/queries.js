@@ -30,6 +30,12 @@ export async function countVisitsThisWeek() {
     return results.rows[0].count
 }
 
+export async function countVisitsPreviousWeek() {
+    const conn = connect(config)
+    const results = await conn.execute('select count (*) as count from visit where YEARWEEK(created_at) = YEARWEEK(NOW()) - 1')
+    return results.rows[0].count
+}
+
 // Calculate the difference from the previous week in percent
 export async function calculateWeeklyChange() {
     const conn = connect(config)

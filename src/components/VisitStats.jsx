@@ -1,7 +1,7 @@
 import { VisitTracker } from '@/components/VisitTracker'
-import { calculateDailyChange, calculateWeeklyChange, countTotalVisits, countVisitsThisWeek, countVisitsToday } from '@/lib/queries'
+import { calculateDailyChange, calculateWeeklyChange, countTotalVisits, countVisitsThisWeek, countVisitsPreviousWeek, countVisitsToday } from '@/lib/queries'
 
-async function DisplayVisits( { counter, difference } ) {
+async function DisplayVisits( { counter, counter_previous, difference } ) {
     return <div>
     <VisitTracker />
     <div className="rounded-2xl border border-zinc-300 dark:border-zinc-700/40">
@@ -16,8 +16,11 @@ async function DisplayVisits( { counter, difference } ) {
                 clipRule="evenodd" />
         </svg>
         </div>
-        <div className="flex items-center justify-between">
-            <dd className="mt-1 text-3xl leading-9 font-semibold text-orange-500">{counter}</dd>
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-end justify-left gap-2">
+                        <dd className="mt-1 text-3xl leading-9 font-semibold text-orange-500">{counter}</dd>
+                            <dd className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">from {counter_previous}</dd>
+                        </div>
             <span className={difference < 0 ? "text-red-500 text-sm font-semibold ml-2" : "text-green-500 text-sm font-semibold ml-2"}>
                 {difference > 0 ? `+${difference}` : difference}%
             </span>
@@ -31,5 +34,6 @@ async function DisplayVisits( { counter, difference } ) {
 export async function WeeklyVisits() {
     const counter = await countVisitsThisWeek()
     const difference = await calculateWeeklyChange()
-    return <DisplayVisits counter={counter} difference={difference} />
+    const counter_previous = await countVisitsPreviousWeek()
+    return <DisplayVisits counter={counter} difference={difference} counter_previous={counter_previous} />
 }
