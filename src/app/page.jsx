@@ -168,6 +168,7 @@ async function DisplayVisits() {
   const counter = await countTotalVisits()
   return (
     <p className="text-sm text-zinc-400 dark:text-zinc-500">
+      <VisitTracker />
     {counter} visits
     </p>
   )
@@ -284,7 +285,7 @@ export default async function Home() {
             />
           </div>
           </div>
-          <DisplayVisits />
+          <VisitTracker />
         </div>
       </Container>
       <Photos />
