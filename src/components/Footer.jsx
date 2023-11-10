@@ -48,9 +48,6 @@ export async function Footer() {
                 </div>
               </div>
               <div className="flex items-center justify-center gap-6 mt-6 sm:mt-0">
-                <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                  visits
-                </p>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 {new Date().getFullYear()} Oliver Nilsson. Made with Next.js.
