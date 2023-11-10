@@ -248,7 +248,6 @@ function Photos() {
 }
 
 export default async function Home() {
-  let projects = (await getAllProjects()).slice(0, 4)
   const counter = await countTotalVisits()
   return (
     <>
