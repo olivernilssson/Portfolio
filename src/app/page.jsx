@@ -144,7 +144,8 @@ function Role({ role }) {
   )
 }
 
-async function LatestProjects( { projects }) {
+async function LatestProjects() {
+  let projects = (await getAllProjects()).slice(0, 4)
   return (
     <div className="flex flex-col gap-16">
       <div>
@@ -255,7 +256,6 @@ function Photos() {
 }
 
 export default async function Home() {
-
   return (
     <>
       <Container className="mt-9">
