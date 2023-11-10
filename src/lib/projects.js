@@ -14,7 +14,11 @@ export async function getAllProjects() {
     cwd: './src/app/projects',
   })
 
+  console.log('projectFilenames:', projectFilenames)
+
   let projects = await Promise.all(projectFilenames.map(importProject))
+
+  console.log('projects:', projects)
 
   return projects.sort((a, z) => +new Date(z.date) - +new Date(a.date))
 }
