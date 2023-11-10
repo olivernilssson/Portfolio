@@ -84,7 +84,7 @@ function ArrowDownIcon(props) {
   )
 }
 
-function Project({ project }) {
+async function Project({ project }) {
   return (
     <Card as="project">
       <Card.Title href={`/projects/${project.slug}`}>
