@@ -1,6 +1,6 @@
 import glob from 'fast-glob'
 
-export async function importProject(projectFilename) {
+async function importProject(projectFilename) {
   let { project } = await import(`../app/projects/${projectFilename}`)
   console.log("test")
   console.log(project.title)
