@@ -21,6 +21,7 @@ import image5 from '@/images/photos/image-5.jpg'
 import { getAllProjects } from '@/lib/projects'
 import { formatDate } from '@/lib/formatDate'
 import { WeeklyVisits } from '@/components/VisitStats'
+import { Suspense } from 'react'
 
 export function MailIcon(props) {
   return (
@@ -278,7 +279,9 @@ export default async function Home() {
       <Photos />
       <Container className="mt-12 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <LatestProjects />
+          <Suspense fallback={<div>Loading...</div>}>
+            <LatestProjects />
+          </Suspense>
           <div className="mt-0 lg:pl-16 xl:pl-24">
             <Resume />
           </div>
