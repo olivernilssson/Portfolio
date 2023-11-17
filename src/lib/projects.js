@@ -12,6 +12,7 @@ async function importProject(projectFilename) {
 }
 
 export async function getAllProjects() {
+  console.log("test getAllProjects")
   let projectFilenames = await glob('*/page.mdx', {
     cwd: './src/app/projects',
   })
