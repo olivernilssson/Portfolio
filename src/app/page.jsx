@@ -82,21 +82,6 @@ function ArrowDownIcon(props) {
   )
 }
 
-async function Project({ project }) {
-  return (
-    <Card as="project">
-      <Card.Title href={`/projects/${project.slug}`}>
-        {project.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={project.date} decorate>
-        {formatDate(project.date)}
-      </Card.Eyebrow>
-      <Card.Description>{project.description}</Card.Description>
-      <Card.Cta>View project</Card.Cta>
-    </Card>
-  )
-}
-
 export function SocialLink({ icon: Icon, ...props }) {
   return (
     <Link className="group" target="_blank" rel="noopener noreferrer" {...props}>
@@ -142,19 +127,44 @@ function Role({ role }) {
   )
 }
 
-async function LatestProjects() {
-  let projects = (await getAllProjects()).slice(0, 4)
+async function Project({ project }) {
+  return (
+    <Card as="project">
+      <Card.Title href={`/projects/${project.slug}`}>
+        {project.title}
+      </Card.Title>
+      <Card.Eyebrow as="time" dateTime={project.date} decorate>
+        {formatDate(project.date)}
+      </Card.Eyebrow>
+      <Card.Description>{project.description}</Card.Description>
+      <Card.Cta>View project</Card.Cta>
+    </Card>
+  )
+}
+
+async function SelectedProjects() {
+  let projects = []
+
+  let importProjects = ['test-project']
+
+  for (let slug of importProjects) {
+    let projectImport = await import(`../app/projects/${slug}/page.mdx`)
+    let project = { ...projectImport.project, slug: slug }
+    projects.push(project)
+  }
+  console.log(projects)
+
   return (
     <div className="flex flex-col gap-16">
       <div>
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-          Latest projects.
+          Selected projects.
         </h1>
         <Link href="/projects" className="relative z-10 mt-4 flex items-center text-sm font-medium text-orange-500">
           View all projects
           <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
         </Link>
-      </div>
+      </div>  
     {projects.map((project) => (
       <Project key={project.slug} project={project} />
     ))}
@@ -279,9 +289,7 @@ export default async function Home() {
       <Photos />
       <Container className="mt-12 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <Suspense fallback={<div>Loading...</div>}>
-            <LatestProjects />
-          </Suspense>
+            <SelectedProjects />
           <div className="mt-0 lg:pl-16 xl:pl-24">
             <Resume />
           </div>
