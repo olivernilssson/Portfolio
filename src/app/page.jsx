@@ -20,7 +20,7 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import { getAllProjects } from '@/lib/projects'
 import { formatDate } from '@/lib/formatDate'
-
+import { WeeklyVisits } from '@/components/VisitStats'
 
 export function MailIcon(props) {
   return (
@@ -272,6 +272,7 @@ export default async function Home() {
             />
           </div>
           </div>
+          <WeeklyVisits />
         </div>
       </Container>
       <Photos />
