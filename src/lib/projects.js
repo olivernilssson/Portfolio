@@ -14,7 +14,7 @@ async function importProject(projectFilename) {
 export async function getAllProjects() {
   console.log("0 test getAllProjects")
   let projectFilenames = await glob('*/page.mdx', {
-    cwd: './src/app/projects',
+    cwd: './',
   })
   console.log("1", projectFilenames)
   return await Promise.all(projectFilenames.map(importProject)).then(projects => {
