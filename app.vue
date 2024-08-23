@@ -28,6 +28,6 @@
 </style>
 
 <script setup>
-  const { visits } = await useFetch('/api/getvisits?start=2024-07-10&end=2024-07-31', { key: 'visits' })
-  const { dailyVisits } = await useFetch('/api/getdailyvisits?start=2024-07-10&end=2024-07-31', { key: 'dailyVisits' })
+  const { visits } = await useFetch('/api/getvisits', { key: 'visits' })
+  const { dailyVisits } = await useFetch('/api/getdailyvisits', { key: 'dailyVisits' })
 </script>
