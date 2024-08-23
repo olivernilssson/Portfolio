@@ -53,5 +53,14 @@ export async function getDailyVisits(startDate?: string, endDate?: string) {
         return acc;
     }, {});
 
-    return dailyVisits;
+    const transformedData = Object.keys(dailyVisits).map((date) => {
+        return {
+            date: date,
+            visits: dailyVisits[date],
+        };
+    });
+
+    transformedData.sort((a, b) => { return new Date(a.date).getTime() - new Date(b.date).getTime() });
+
+    return transformedData;
 }

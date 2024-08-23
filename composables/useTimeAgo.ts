@@ -12,14 +12,26 @@ export const useTimeAgo = (initialDate: Ref<Date> = ref(new Date())) => {
   // Computed property to calculate time ago
   const timeAgo = computed(() => {
     const diff = (dateNow.value.getTime() - lastUpdated.value.getTime()) / 1000
-    if (diff < 3) return 'Just now'
-    if (diff >= 3 && diff < 60) return `${Math.floor(diff)} second(s) ago`
-    const minutes = Math.floor(diff / 60)
-    if (minutes < 60) return `${minutes} minute(s) ago`
-    const hours = Math.floor(minutes / 60)
-    if (hours < 24) return `${hours} hour(s) ago`
-    const days = Math.floor(hours / 24)
-    return `${days} day(s) ago`
+    let formattedTimeAgo = ''
+    if (diff < 3) {
+      formattedTimeAgo = 'Just now'
+    } else if (diff >= 3 && diff < 60) {
+      formattedTimeAgo = `${Math.floor(diff)} second(s) ago`
+    } else {
+      const minutes = Math.floor(diff / 60)
+      if (minutes < 60) {
+        formattedTimeAgo = `${minutes} minute(s) ago`
+      } else {
+        const hours = Math.floor(minutes / 60)
+        if (hours < 24) {
+          formattedTimeAgo = `${hours} hour(s) ago`
+        } else {
+          const days = Math.floor(hours / 24)
+          formattedTimeAgo = `${days} day(s) ago`
+        }
+      }
+    }
+    return { diff, formattedTimeAgo }
   })
 
   const updateLastUpdated = (date: Date = new Date()) => {

@@ -47,6 +47,12 @@ const techStack = [
     },
     {
         id: 5,
+        logo: "/logos/excel.svg",
+        name: "Excel",
+        description: "I've been using Excel for years and I'm quite proficient in it. I've used it for everything from simple data analysis to complex financial modeling."
+    },
+    {
+        id: 6,
         logo: "/logos/matlab.svg",
         name: "MATLAB",
         description: "I've been using MATLAB for some projects in school."
