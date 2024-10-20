@@ -1,6 +1,6 @@
 {
   "name": "This Portfolio webapp",
-  "url": "https://github.com/olivernilssson/Portfolio-2",
+  "url": "https://github.com/olivernilssson/Portfolio",
   "description": "This portfolio is built using Nuxt.js and TypeScript. It is a dynamic webapp hosted on Vercel.",
   "languages": ["TypeScript", "Nuxt.js"]
 }
