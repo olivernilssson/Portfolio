@@ -5,9 +5,9 @@
         </h2>
         <div class="space-y-4">
             <div v-for="(work, id) in jobs" :key="id" class="flex items-start space-x-4">
-                <div class="flex-none p-1 bg-white w-12 h-12 shadow-lg rounded flex items-center justify-center">
+                <!-- <div class="flex-none p-1 bg-white w-12 h-12 shadow-lg rounded flex items-center justify-center">
                     <img :src="work.logo" :alt="`${work.company} logo`" draggable="false">
-                </div>
+                </div> -->
                 <div>
                     <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
                         {{ work.title }}
@@ -42,35 +42,31 @@
 const jobs = [
     {
         id: 1,
-        logo: "/logos/fristads_sverige_logo.jpeg",
         title: "Accounting Clerk",
         company: "Fristads",
-        date: "2022 - Now",
-        description: "I work as an accounting clerk at Fristads AB. The work consists of accounting, invoicing, and credit management."
+        date: "May 2023 - Now",
+        description: "Accounting, invoicing and credit management."
     },
     {
         id: 2,
-        logo: "/logos/sons.svg",
         title: "Web and Accounting Consultant",
-        company: "Sons Design",
-        date: "2021 - Now",
-        description: "I work as a frontend developer at Kodbruket. I work with Vue.js, Nuxt.js, Tailwind CSS, and Storyblok."
+        company: "Freelance",
+        date: "Oct 2020 - Now",
+        description: "Performs various web development and accounting tasks."
     },
     {
         id: 3,
-        logo: "/logos/LF.jpeg",
         title: "Customer Service",
         company: "Länsförsäkringar",
-        date: "2020 - Present",
-        description: "I work as a freelance web developer. I work with Vue.js, Nuxt.js, Tailwind CSS, and Storyblok."
+        date: "Jun 2021 - Feb 2023",
+        description: "Handling of insurance cases."
     },
     {
         id: 4,
-        logo: "/logos/netonnet_logo.jpeg",
         title: "Customer Service",
         company: "NetOnNet",
-        date: "2020 - 2021",
-        description: "I worked",
+        date: "Jun 2020 - Aug 2021",
+        description: "Handling incoming customer contacts via phone, chat and email."
     },
 ];
 </script>

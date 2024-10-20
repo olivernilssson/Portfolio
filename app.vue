@@ -6,7 +6,7 @@
     <NuxtPage />
   </UContainer>
   <UNotifications />
-  <div class="h-32"></div>
+  <div class="h-12"></div>
   <AppFooter />
 </template>
 

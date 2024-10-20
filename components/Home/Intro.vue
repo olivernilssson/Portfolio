@@ -9,7 +9,7 @@
     <p class="text-gray-900 dark:text-gray-400">
       I’m Oliver, currently studying Master of Science in Finance at the Business School of Gothenburg University. I have a passion for finance and technology and I am looking for a position where I can combine these two interests.
     </p>
-    <AppVisits />
+    <!-- <AppVisits /> -->
   </div>
 </template>
 
