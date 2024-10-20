@@ -1,0 +1,6 @@
+{
+  "name": "Mattlagret Ecommerce",
+  "url": "https://mattlagret.com",
+  "description": "Custom Ecommerce solution built using Medusa.js and Next.js. Codebase is private due to security reasons.",
+  "languages": ["TypeScript", "Node.js", "Next.js"]
+}

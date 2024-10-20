@@ -38,6 +38,7 @@
     "postcss-custom-properties": "^13.3.11",
     "radix-vue": "^1.9.2",
     "tailwind-merge": "^2.4.0",
+    "tailwindcss": "^3.4.14",
     "tailwindcss-animate": "^1.0.7",
     "vue-use-fixed-header": "^2.0.0"
   }
