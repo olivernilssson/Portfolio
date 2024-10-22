@@ -25,37 +25,37 @@ const techStack = [
         id: 1,
         logo: "/logos/python.svg",
         name: "Python",
-        description: "My go-to language for most things. I've used it for everything from data analysis, modeling, and visualization to web development."
+        description: "Using Python for everything from data analysis and machine learning to web development. I've used libraries like Pandas, NumPy, Matplotlib, and FastAPI etc."
     },
     {
         id: 2,
         logo: "/logos/sql.svg",
         name: "SQL",
-        description: "I've used different flavors of SQL over the years such as PostgreSQL, MySQL, and Microsoft SQL Server."
+        description: "I've used different flavors of SQL over the years such as PostgreSQL and MySQL."
     },
     {
         id: 3,
         logo: "/logos/vue.svg",
         name: "Vue.js",
-        description: "Vue.js is a progressive JavaScript framework for building user interfaces. It is designed from the ground up to be incrementally adoptable, and can easily scale between a library and a framework depending on different use cases."
+        description: "Used Nuxt.js to build this website, which is a Vue.js framework. I like the simplicity and performance of Vue."
     },
     {
         id: 4,
         logo: "/logos/react.svg",
         name: "React",
-        description: "I've been using React.js and Next.js to develop some of my projects. I like the flexibility and performance of React."
+        description: "I've been using React.js and Next.js to develop some of my projects."
     },
     {
         id: 5,
         logo: "/logos/excel.svg",
         name: "Excel",
-        description: "I've been using Excel for years and I'm quite proficient in it. I've used it for everything from simple data analysis to complex financial modeling."
+        description: "Have used Excel much in school, work, and personal projects. Achieved the Microsoft Office Specialist: Microsoft Excel Expert(Office 2019) certification."
     },
     {
         id: 6,
         logo: "/logos/matlab.svg",
         name: "MATLAB",
-        description: "I've been using MATLAB for some projects in school."
+        description: "I've been using MATLAB for some projects in school, but prefer Python instead."
     },
 ];
 </script>
