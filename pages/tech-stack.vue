@@ -31,7 +31,7 @@ const techStack = [
         id: 2,
         logo: "/logos/sql.svg",
         name: "SQL",
-        description: "I've used different flavors of SQL over the years such as PostgreSQL and MySQL."
+        description: "I've used different types of SQL such as PostgreSQL and MySQL."
     },
     {
         id: 3,
@@ -42,7 +42,7 @@ const techStack = [
     {
         id: 4,
         logo: "/logos/react.svg",
-        name: "React",
+        name: "React.js",
         description: "I've been using React.js and Next.js to develop some of my projects."
     },
     {
