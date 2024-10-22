@@ -7,9 +7,8 @@
       <HomeHelloRotator />
     </h1>
     <p class="text-gray-900 dark:text-gray-400">
-      I'm Oliver, currently pursuing a Master of Science in Finance at the Business School of Gothenburg University. I have a strong interest for finance, data analysis and coding. I enjoy combining these fields to uncover data-driven insights.
+      I'm Oliver, currently pursuing a Master of Science in Finance at the Business School of Gothenburg University, I have a strong interest in finance, data analysis, and coding. I enjoy combining these fields to extract data-driven insights and make informed decisions. My projects often involve analyzing market trends, developing financial models, and utilizing various coding techniques and Big Data analysis, along with data visualization methods, to communicate findings effectively.
     </p>
-    <!-- <AppVisits /> -->
   </div>
 </template>
 
