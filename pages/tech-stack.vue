@@ -49,7 +49,7 @@ const techStack = [
         id: 5,
         logo: "/logos/excel.svg",
         name: "Excel",
-        description: "Have used Excel much in school, work, and personal projects. Achieved the Microsoft Office Specialist: Microsoft Excel Expert(Office 2019) certification."
+        description: "Have used Excel much in school, work, and personal projects. Achieved the Microsoft Office Specialist: Microsoft Excel Expert (Office 2019) certification."
     },
     {
         id: 6,
