@@ -9,7 +9,7 @@ const { data } = useNuxtData('dailyVisits')
 <template>
   <AppRefreshButton dataset="dailyVisits" />
   <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-4">
-    <p className="text-gray-800 dark:text-gray-200 font-bold text-lg pb-6">Daily Visits</p>
+    <p className="text-gray-800 dark:text-gray-200 font-bold text-lg pb-6">Daily Server Requests</p>
     <LineChart
       :data="data.visits"
       index="date"
